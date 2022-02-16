@@ -11,6 +11,7 @@ You can use this template to build a CORS proxy, an API server, or serving stati
 -   ⚙️ Linting and Testing (by [ESLint](https://eslint.org/) & [Jest](https://jestjs.io/))
 -   🌈 Source Formatting (by [Prettier](https://prettier.io/))
 -   🦾 TypeScript Supported (by [TypeScript](https://www.typescriptlang.org/))
+-   🚦 GitHub Action CI/CD (Auto Deploy, Pull Request Check).
 -   🛠 Utility Function: [Headers](./src/headers.ts).
 
 ## Usage
@@ -35,3 +36,17 @@ There are some scripts in the package.json file:
   - Rules are stored in `.prettierrc`
 
 If you want to publish the module worker, you can use `wrangler publish`.
+
+### GitHub Action Auto Deploy
+
+Provide a `CF_API_TOKEN` secret to enable auto deploy.
+
+The workflow is here: [publish_worker.yml](./.github/workflows/publish_worker.yml)
+
+## Notice
+
+### Don't Push to Main Branch
+
+Push to other branches and make a PR to the main branch, by doing so, the GitHub Action will check your PR is working before merging it.
+
+Push directly to the main branch will trigger a deploy process immediately without checking your the new code is working or not.
