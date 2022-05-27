@@ -1,16 +1,11 @@
 name = "module-worker"
-type = "javascript"
 workers_dev = true
-compatibility_date = "2022-01-28"
-
-[build.upload]
-format = "modules"
-dir = "./dist"
-main = "./index.js"
-
-[[build.upload.rules]]
-type = "ESModule"
-globs = ["**/*.js"]
+compatibility_date = "2022-05-27"
+main = "./dist/index.js"
 
 [build]
 command = "npm run -s build"
+
+[[rules]]
+type = "ESModule"
+globs = ["**/*.js"]
